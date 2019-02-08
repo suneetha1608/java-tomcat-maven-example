@@ -4,7 +4,7 @@
 
 <h3>WelCome to Jenkins! We are working on Code Pipeline version 2</h3>
 
-<p>Hello team</p>>
+<p>Hello team, Staging is success </p>>
 
 </body>
 </html>
