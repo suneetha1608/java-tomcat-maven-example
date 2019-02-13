@@ -1,12 +1,36 @@
 pipeline {
     agent any
     stages {
+        stage ('Initialize') {
+            steps {
+                echo  "Initializing the Code File"
+            }
+        }
+
+        stage ('Build') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+
+         stage ('Deploy') {
+            steps {
+                echo 'Deployed an Artifact'
+            }
+        }
+    }
+}
+
+/*
+pipeline {
+    agent any
+    stages {
         stage ('Build Servlet Project') {
             steps {
-                /*For windows machine */
+                //For windows machine 
                bat  'mvn clean package'
 
-                /*For Mac & Linux machine */
+                //For Mac & Linux machine
                // sh  'mvn clean package'
             }
 
@@ -47,4 +71,4 @@ pipeline {
             }
         }
     }
-}
+}*/
