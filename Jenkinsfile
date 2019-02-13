@@ -1,23 +1,20 @@
 pipeline {
     agent any
     stages {
-        stage ('Initialize') {
+        stage ('Build Jenkins Servlet Project') {
             steps {
-                echo  "Initializing the Code File"
+                //For windows machine 
+               bat  'mvn clean package'
+
+                //For Mac & Linux machine
+               // sh  'mvn clean package'
+            }
+            post{
+                success{
+                    echo 'Now Archiving ....'
+
+                    archiveArtifacts artifacts : '**/*.war'
+                }
             }
         }
-
-        stage ('Build') {
-            steps {
-                echo 'Hello World'
-            }
-        }
-
-         stage ('Deploy') {
-            steps {
-                echo 'Deployed an Artifact'
-            }
-        }
-    }
-}
-
+     }   
