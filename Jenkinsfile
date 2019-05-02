@@ -22,7 +22,7 @@ pipeline {
         stage ('Deploy Build in Staging Area'){
             steps{
 
-                build job : ' Deploy-Servlet-Staging'
+                build job : 'Deploy Artifact on Server Pipeline'
 
             }
         }
